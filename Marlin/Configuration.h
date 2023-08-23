@@ -1676,9 +1676,12 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
  *     O-- FRONT --+
  */
 
-#define NOZZLE_TO_PROBE_OFFSET_X -31.5 	//[MDS]
-#define NOZZLE_TO_PROBE_OFFSET_Y -41.8 	//[MDS]
-#define NOZZLE_TO_PROBE_OFFSET { NOZZLE_TO_PROBE_OFFSET_X, NOZZLE_TO_PROBE_OFFSET_Y, 0 } 	//[MDS]
+//#define NOZZLE_TO_PROBE_OFFSET_X -31.5 	//[MDS]
+//#define NOZZLE_TO_PROBE_OFFSET_Y -41.8 	//[MDS]
+#define NOZZLE_TO_PROBE_OFFSET_X -44.7 	//[MDS]
+#define NOZZLE_TO_PROBE_OFFSET_Y 0 	//[MDS]
+#define NOZZLE_TO_PROBE_OFFSET_Z 0 	//[MDS]
+#define NOZZLE_TO_PROBE_OFFSET { NOZZLE_TO_PROBE_OFFSET_X, NOZZLE_TO_PROBE_OFFSET_Y, NOZZLE_TO_PROBE_OFFSET_Z } 	//[MDS]
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1738,7 +1741,7 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-//#define MULTIPLE_PROBING 2 
+#define MULTIPLE_PROBING 2 
 //#define EXTRA_PROBING    1
 
 /**
@@ -1760,7 +1763,7 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes 	//[MDS]
 #define Z_AFTER_PROBING            5 // Z position after probing is done 	//[MDS]
 
-#define Z_PROBE_LOW_POINT          -3 // Farthest distance below the trigger-point to stop	//{MDS}
+#define Z_PROBE_LOW_POINT          -4 // Farthest distance below the trigger-point to stop	//{MDS}
 
 // For M851 give a range for adjusting the Z probe offset
 #define Z_PROBE_OFFSET_RANGE_MIN -20   
@@ -1793,7 +1796,7 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 #define DELAY_BEFORE_PROBING 200  // (ms) To prevent vibrations from triggering piezo sensors
 
 // Require minimum nozzle and/or bed temperature for probing
-// #define PREHEAT_BEFORE_PROBING	//
+// #define PREHEAT_BEFORE_PROBING	
 #if ENABLED(PREHEAT_BEFORE_PROBING)
   #define PROBING_NOZZLE_TEMP 150   // (°C) Only applies to E0 at this time
   #define PROBING_BED_TEMP     60
@@ -1889,17 +1892,21 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 // @section geometry 
 
 // The size of the printable area
-#define X_BED_SIZE 230  // [MDS] Max usable bed size
-#define Y_BED_SIZE 230  // [MDS]  Max usable bed size
+#define X_BED_SIZE 235  // [MDS] Max usable bed size
+#define Y_BED_SIZE 235  // [MDS]  Max usable bed size
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
 #define X_MIN_POS -10
 #define Y_MIN_POS -8
 #define Z_MIN_POS 0
 
-#define X_MAX_POS X_BED_SIZE - X_MIN_POS  // [MDS]  Stock physical limit
-#define Y_MAX_POS Y_BED_SIZE - Y_MIN_POS // [MDS] Stock physical limit
+#define X_MAX_POS X_BED_SIZE + 50  // 	[MDS] Stock physical limit
+#define Y_MAX_POS Y_BED_SIZE + 50 // 	[MDS] Stock physical limit
+
+
 #define Z_MAX_POS 270  // Ender Configs
+
+
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
 //#define J_MIN_POS 0
