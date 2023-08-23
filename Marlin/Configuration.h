@@ -1907,8 +1907,8 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 #define Y_MIN_POS -3
 #define Z_MIN_POS 0
 
-#define X_MAX_POS  248   // X_BED_SIZE + 50  // 	[MDS] Stock physical limit
-#define Y_MAX_POS  246   // Y_BED_SIZE + 50 // 	[MDS] Stock physical limit
+#define X_MAX_POS  256   // X_BED_SIZE + 50  // 	[MDS] Stock physical limit
+#define Y_MAX_POS  251   // Y_BED_SIZE + 50 // 	[MDS] Stock physical limit
 
 
 #define Z_MAX_POS 270  // Ender Configs
