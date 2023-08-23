@@ -1891,17 +1891,24 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 
 // @section geometry 
 
+
+
+
 // The size of the printable area
-#define X_BED_SIZE 235  // [MDS] Max usable bed size
-#define Y_BED_SIZE 235  // [MDS]  Max usable bed size
+#define X_BED_SIZE 252  // [MDS] Max usable bed size
+#define Y_BED_SIZE 232  // [MDS] Max usable bed size
+
+
+
+
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
-#define X_MIN_POS -10
-#define Y_MIN_POS -8
+#define X_MIN_POS -2
+#define Y_MIN_POS -3
 #define Z_MIN_POS 0
 
-#define X_MAX_POS X_BED_SIZE + 50  // 	[MDS] Stock physical limit
-#define Y_MAX_POS Y_BED_SIZE + 50 // 	[MDS] Stock physical limit
+#define X_MAX_POS  248   // X_BED_SIZE + 50  // 	[MDS] Stock physical limit
+#define Y_MAX_POS  246   // Y_BED_SIZE + 50 // 	[MDS] Stock physical limit
 
 
 #define Z_MAX_POS 270  // Ender Configs
