@@ -4,7 +4,7 @@
  *
  * Based on Sprinter and grbl.
  * Copyright (c) 2011 Camiel Gubbels / Erik van der Zalm
- *
+ * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -1895,20 +1895,20 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 
 
 // The size of the printable area
-#define X_BED_SIZE 252  // [MDS] Max usable bed size
-#define Y_BED_SIZE 232  // [MDS] Max usable bed size
+#define X_BED_SIZE 235  // [MDS] Max usable bed size
+#define Y_BED_SIZE 235  // [MDS] Max usable bed size
 
 
 
 
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
-#define X_MIN_POS -2
+#define X_MIN_POS -1
 #define Y_MIN_POS -3
 #define Z_MIN_POS 0
 
-#define X_MAX_POS  256   // X_BED_SIZE + 50  // 	[MDS] Stock physical limit
-#define Y_MAX_POS  251   // Y_BED_SIZE + 50 // 	[MDS] Stock physical limit
+#define X_MAX_POS  253   // X_BED_SIZE + 50  // 	[MDS] Stock physical limit
+#define Y_MAX_POS  235   // Y_BED_SIZE + 50 // 	[MDS] Stock physical limit
 
 
 #define Z_MAX_POS 270  // Ender Configs
