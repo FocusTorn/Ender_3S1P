@@ -1905,7 +1905,7 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
 #define X_MIN_POS -1
 #define Y_MIN_POS -3
-#define Z_MIN_POS 0
+#define Z_MIN_POS 0 
 
 #define X_MAX_POS  253   // X_BED_SIZE + 50  // 	[MDS] Stock physical limit
 #define Y_MAX_POS  235   // Y_BED_SIZE + 50 // 	[MDS] Stock physical limit
