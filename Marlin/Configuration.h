@@ -25,8 +25,33 @@
 
 /*
 
+	@section info
+ 	@section stepper drivers
+	@section extruder definitions
+	@section multi-material
+	@section psu control
+	@section temperature
+	@section hotend temp
+	@section mpctemp
+	@section bed temp
+	@section chamber temp
+	@section safety
+		@section machine
+	@section delta
+	@section scara
+	@section tpara
+	@section polar
+		@section machine
+	@section endstops
+	@section motion
+	@section probes
+	@section motion
+	@section extruder
+	@section homing
+	@section geometry 
 
-// @section geometry 
+
+
 
 
  Per https://community.octoprint.org/t/a-list-of-recommended-marlin-features/39048	[op]
@@ -94,7 +119,11 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
  *                      https://www.thingiverse.com/thing:1278865
  */
 
+
+
+//======================================================================================================
 // @section info
+//======================================================================================================
 
   #define ENDER_3S1_PRO
   
@@ -147,7 +176,11 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 // Show the bitmap in Marlin/_Statusscreen.h on the status screen.
 //#define CUSTOM_STATUS_SCREEN_IMAGE
 
+
+
+//======================================================================================================
 // @section machine
+//======================================================================================================
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
@@ -207,7 +240,11 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
 //#define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
 
+
+
+//======================================================================================================
 // @section stepper drivers
+//======================================================================================================
 
 /**
  * Stepper Drivers
@@ -271,7 +308,11 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
   //#define AXIS9_ROTATES
 #endif
 
-// @section extruder
+
+
+//======================================================================================================
+// @section extruder definitions
+//======================================================================================================
 
 // This defines the number of extruders
 // :[0, 1, 2, 3, 4, 5, 6, 7, 8]
@@ -432,7 +473,11 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 //#define HOTEND_OFFSET_Y { 0.0, 5.00 }  // (mm) relative Y-offset for each nozzle
 //#define HOTEND_OFFSET_Z { 0.0, 0.00 }  // (mm) relative Z-offset for each nozzle
 
+
+
+//======================================================================================================
 // @section multi-material
+//======================================================================================================
 
 /**
  * Multi-Material Unit
@@ -450,7 +495,11 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
  */
 //#define MMU_MODEL PRUSA_MMU2
 
+
+
+//======================================================================================================
 // @section psu control
+//======================================================================================================
 
 /**
  * Power Supply Control
@@ -497,7 +546,12 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 //===========================================================================
 //============================= Thermal Settings ============================
 //===========================================================================
+
+
+
+//======================================================================================================
 // @section temperature
+//======================================================================================================
 
 /**
  * --NORMAL IS 4.7kΩ PULLUP!-- 1kΩ pullup can be used on hotend sensor, using correct resistor and table
@@ -731,7 +785,11 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 //============================= PID Settings ================================
 //===========================================================================
 
+
+
+//======================================================================================================
 // @section hotend temp
+//======================================================================================================
 
 /**
  * Temperature Control
@@ -772,6 +830,7 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
  * Use a physical model of the hotend to control temperature. When configured correctly
  * this gives better responsiveness and stability than PID and it also removes the need
  * for PID_EXTRUSION_SCALING and PID_FAN_SCALING. Use M306 T to autotune the model.
+ 
  * @section mpctemp
  */
 #if ENABLED(MPCTEMP)
@@ -870,6 +929,7 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
  * impact FET heating. This also works fine on a Fotek SSR-10DA Solid State Relay into a 200W
  * heater. If your configuration is significantly different than this and you don't understand
  * the issues involved, don't use chamber PID until someone else verifies that your hardware works.
+ 
  * @section chamber temp
  */
 //#define PIDTEMPCHAMBER
@@ -1326,7 +1386,8 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 //=============================================================================
 //============================== Movement Settings ============================
 //=============================================================================
-// @section motion
+
+// @section motion 
 
 /**
  * Default Settings
@@ -1450,6 +1511,7 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 //===========================================================================
 //============================= Z Probe Options =============================
 //===========================================================================
+
 // @section probes
 
 //
@@ -1634,6 +1696,9 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
   #define Z_PROBE_ALLEN_KEY_STOW_4_FEEDRATE XY_PROBE_FEEDRATE
 
 #endif // Z_PROBE_ALLEN_KEY
+
+
+
 
 /**
  * Nozzle-to-Probe offsets { X, Y, Z }
@@ -1830,10 +1895,7 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 // Turn off the display blinking that warns about possible accuracy reduction
 //#define DISABLE_REDUCED_ACCURACY_WARNING
 
-// @section extruder
 
-//#define DISABLE_E              // Disable the extruder when not stepping
-#define DISABLE_INACTIVE_EXTRUDER   // Keep only the active extruder enabled
 
 // @section motion
 
@@ -1849,6 +1911,9 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 //#define INVERT_W_DIR false
 
 // @section extruder
+
+//#define DISABLE_E              // Disable the extruder when not stepping
+#define DISABLE_INACTIVE_EXTRUDER   // Keep only the active extruder enabled
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
 #define INVERT_E0_DIR false
@@ -1889,29 +1954,23 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
 //#define V_HOME_DIR -1
 //#define W_HOME_DIR -1
 
-// @section geometry 
 
 
+//======================================================================================================
+//= @section geometry ==================================================================================
+//======================================================================================================
 
+#define X_BED_SIZE 233
+#define Y_BED_SIZE 235
 
-// The size of the printable area
-#define X_BED_SIZE 235  // [MDS] Max usable bed size
-#define Y_BED_SIZE 235  // [MDS] Max usable bed size
+#define X_MIN_POS -2
+#define X_MAX_POS  253   
 
-
-
-
-
-// Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
-#define X_MIN_POS -1
 #define Y_MIN_POS -3
+#define Y_MAX_POS  235
+
 #define Z_MIN_POS 0 
-
-#define X_MAX_POS  253   // X_BED_SIZE + 50  // 	[MDS] Stock physical limit
-#define Y_MAX_POS  235   // Y_BED_SIZE + 50 // 	[MDS] Stock physical limit
-
-
-#define Z_MAX_POS 270  // Ender Configs
+#define Z_MAX_POS 270
 
 
 //#define I_MIN_POS 0
@@ -2096,8 +2155,8 @@ Z_MIN_ENDSTOP_INVERTING vs Z_MIN_ENDSTOP_HIT_STATE
   #define RESTORE_LEVELING_AFTER_G28	//[MDS]
 //#define ENABLE_LEVELING_AFTER_G28
 
-  //                                      X0, Y0  X1,Y1   X2,Y2   X3,Y3   X4, Y4		//[MDS]
-  #define MANUALL_BED_LEVEING_5POSITION {110,110, 30,30, 190,30, 190,190, 30,190}	//[MDS]
+  //                                      X0, Y0  X1,Y1   X2,Y2    X3, Y3   X4, Y4		//[MDS]
+  #define MANUALL_BED_LEVEING_5POSITION {110,110, 30,30, 190,30,  190,190,  30,190}	//[MDS]
   
 /**
  * Auto-leveling needs preheating
