@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../Ender_3S1P_Klipper"
+		}
+	],
+	"settings": {}
+}
